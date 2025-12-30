@@ -1,0 +1,5 @@
+.env
+producer/.env
+*.env
+.azure/
+.ssh/
