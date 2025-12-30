@@ -29,18 +29,35 @@ async def main():
         eventhub_name=EVENT_HUB_NAME
     )
     
+# The same async function, but with a timeout added
+
     async def send_to_eventhub(message):
-        """Coroutine to send a single message."""
+        """Coroutine to send a single message with a timeout."""
         try:
             event_data_batch = await producer.create_batch()
             event_data_batch.add(EventData(message))
-            await producer.send_batch(event_data_batch)
             
+            # --- THIS IS THE KEY CHANGE ---
+            # Add a timeout of 15 seconds to the send operation.
+            # If it takes longer than 15s, it will raise a TimeoutError.
+            await producer.send_batch(event_data_batch, timeout=15)
+            
+            # This print statement now only runs on SUCCESS
             data = json.loads(message)
             if 'price' in data:
                 print(f"Sent: {data['product_id']} at ${data['price']}")
+                
+        except asyncio.TimeoutError:
+            # This will be logged if the send_batch call takes too long
+            print("ERROR: Sending to Event Hub timed out after 15 seconds. This may cause a container restart.")
+            # We will exit with a non-zero code to trigger the OnFailure restart policy
+            exit(1)
+            
         except Exception as e:
-            print(f"Error sending to Event Hub: {e}")
+            # This catches other errors from the Event Hub SDK
+            print(f"ERROR: An exception occurred while sending to Event Hub: {e}")
+            # We also exit here to be safe and trigger a restart
+            exit(1)
 
     # --- WebSocket Callback Functions ---
     # These functions run in a separate thread managed by the websocket client
