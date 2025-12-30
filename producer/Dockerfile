@@ -9,7 +9,7 @@ COPY producer/producer.py .
 # If you don't have a requirements.txt, we will just install them directly
 
 # 4. Install the necessary libraries
-RUN pip install azure-eventhub websocket-client
+RUN pip install --no-cache-dir azure-eventhub websocket-client python-dotenv
 
 # 5. Run the script
-CMD ["python", "producer.py"]
+CMD ["python", "-u", "producer.py"]
