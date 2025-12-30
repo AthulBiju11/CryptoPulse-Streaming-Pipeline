@@ -2,7 +2,7 @@
 # DBTITLE 1,Imports
 # Imports
 import json
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, current_timestamp  
 
 # COMMAND ----------
 
@@ -31,7 +31,10 @@ raw_df = spark.readStream \
     .load()
 
 
-coinbase_raw_trades_df = raw_df.withColumn("body", col("body").cast("string"))
+coinbase_raw_trades_df = (
+    raw_df.withColumn("body", col("body").cast("string"))
+            .withColumn("bronze_ingestion_time",current_timestamp())
+)
 
 coinbase_raw_trades_df.writeStream \
     .format("delta") \

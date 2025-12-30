@@ -9,7 +9,8 @@
 # MAGIC   publisher STRING,
 # MAGIC   partitionKey STRING,
 # MAGIC   properties MAP<STRING,STRING>,
-# MAGIC   systemProperties MAP<STRING,STRING>
+# MAGIC   systemProperties MAP<STRING,STRING>,
+# MAGIC   bronze_ingestion_time TIMESTAMP
 # MAGIC )
 # MAGIC USING DELTA 
 # MAGIC TBLPROPERTIES(
