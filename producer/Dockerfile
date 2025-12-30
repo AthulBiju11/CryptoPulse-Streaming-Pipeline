@@ -1,15 +1,16 @@
-# 1. Use a lightweight Python image
+# 1. Use a lightweight Python base
 FROM python:3.11-slim
 
-# 2. Set the working directory
+# 2. Set the working directory inside the container
 WORKDIR /app
 
-# 3. Copy your producer and requirements
-COPY producer/producer.py .
-# If you don't have a requirements.txt, we will just install them directly
+# 3. Copy everything from the CURRENT folder (producer/) into /app
+# Since we will 'cd' into producer/, '.' refers to producer.py, requirements.txt, etc.
+COPY . /app/
 
-# 4. Install the necessary libraries
+# 4. Install requirements
 RUN pip install --no-cache-dir azure-eventhub websocket-client python-dotenv
 
 # 5. Run the script
+# We use -u to make sure Python logs appear in Azure immediately
 CMD ["python", "-u", "producer.py"]
