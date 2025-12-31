@@ -13,12 +13,12 @@
 ### Pipeline Execution
 *Below is a snapshot of the Databricks Workflow executing the Medallion Architecture (Bronze -> Silver -> Gold).*
 
-![Pipeline Execution - Databricks Workflow](INSERT_PIPELINE_IMAGE_LINK_HERE)
+![Pipeline Execution - Databricks Workflow](https://res.cloudinary.com/doet8xhyx/image/upload/v1767179443/IMG_5328_didzt1.png)
 
 ### Real-Time Dashboard
 *A view of the Databricks SQL Dashboard monitoring live crypto prices and market alerts.*
 
-![Databricks SQL Dashboard](INSERT_DASHBOARD_IMAGE_LINK_HERE)
+![Databricks SQL Dashboard](https://res.cloudinary.com/doet8xhyx/image/upload/v1767179444/IMG_5326_qo9ovh.png)
 
 ---
 
