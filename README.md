@@ -6,6 +6,22 @@
 
 ![Architecture Diagram](https://mermaid.ink/img/pako:eNqNVMtu2zAQ_BWBTy3gA_RDc2hToC3qoCnakBwcW1RESqJIhSKNgn4N_fsupTix08Z9sDkyM9wd7q6QrJSCJPDq51oK9Ebes4q83-1L_LDfl7Dfb8r93-vN5vrt9e262GzK4rrc_irLzWpdlviFvM5e4J1kUsmUvK64Eoy_J2-4lEyq95y9Iq9kKqmS6A15VcqMvF69f4dXyWskf4F7yV9h_QruwT8gbyVn8q3gQpYScUBeYc2EvOGM4R35wN4qJtiDF1xx9hP6wL6R97CQgnF0k0IqmWBf8FdyLphC3ygueMIY-om8J5LCi_7E2R25wF4rLnmK78h7yYngCn3DXiqp0I-KCy4Zg37BXiip0E88f8d-4jli_x6d90rO0VeKC5Exhn6FviqpoJ94jthP_I7Yf0DnvZJz9I3iQmiMof-gvygpo594jthP_IHYf0znvZZz9I3iQmiMof-EfiupoZ94vpJ-4g9K-l84742co28VF0JjDP1X9FslDfQzzz-hn3j-lP53znuj5OhbxYXIGEP_Hf1OSQv9Is9P6BefP6X_g857K-foO8WFyBhDv0O_U9JBv_L8hH7l-VP6P-m8d3KOvlNciIwx9L_Q75X00G88P6HfeP6U_i86772co-8VFyJjDP1X9FslDfQzzz-hn3j-lP53znuj5OhbxYXIGEP_Hf1OSQv9Is9P6BefP6X_g857K-foO8WFyBhDv0O_U9JBv_L8hH7l-VP6P-m8d3KOvlNciIwx9L_Q75X00G88P6HfeP6U_i86772co-8VFyJjDP0v9AclA_Q7z9-h33n-H_qDkv1P9F8lI_QHz9-hP3j-H_qjkv1P9CclY_Qnz9-hP3n-H_qTkv1P9GclE_Rnzz-hP3v-n_qzkuNP9BclU_SXzj-hv3T-n_qrkuNP9DclM_Q3zz-hP3v-n_q7kuNP9A8lM_SPsH-F_qHkzCfc1YrPMeC25iX6oWSC_sE9F_QPJXf0v5QcfaP4HDFG0H_FPhX0XyV39I3ic0QYQf8N-1zQf5Xc0TeK696wT2dE1hT03yT39I3iQmiMkf6H3Cjp2f9CbpT07L9K7ukbxaXQD1V8T0lC3yj-oIoxgo6R_rGSlr5RXKAfqxgj6BjpHytp6RvFBf2DijGCjpH-sZKWe_pGccl4tIpPMeC8lQf6kZKOvlFciIwxdMy56BjpHytp6RvFBfaX_FvKD_lJyl77R_Ar9Q8oe-UVyK3qtiI-gY6Z8q6ekbxaXovSo2go6R_qmSnr5RXGkHVWwEHSP_pZKWvnn_L1DFRNAx8t8qaekbxaXoNxTfUtLTN4pL0W8ovqWkp28Ul6LfUHxLSU_fKC6FfqPiW0p6NjSK6_q_nf8Br41S3A)
 
+---
+
+## 📸 Project Visuals
+
+### Pipeline Execution
+*Below is a snapshot of the Databricks Workflow executing the Medallion Architecture (Bronze -> Silver -> Gold).*
+
+![Pipeline Execution - Databricks Workflow](INSERT_PIPELINE_IMAGE_LINK_HERE)
+
+### Real-Time Dashboard
+*A view of the Databricks SQL Dashboard monitoring live crypto prices and market alerts.*
+
+![Databricks SQL Dashboard](INSERT_DASHBOARD_IMAGE_LINK_HERE)
+
+---
+
 ## 🛠️ Infrastructure & Cloud Services 
 
 This project integrates several key Azure services to create a scalable, production-grade data pipeline. Below is a detailed breakdown of each component and its role:
@@ -115,3 +131,4 @@ Use the queries in `databricks/dashboard_queries.sql` to build the **Real-Time M
 - **Price Trends**: 1-hour rolling window of Avg Price.
 - **Volume Analysis**: Trading volume per asset.
 - **Live Alerts**: Table showing detected `FLASH_CRASH` or `PRICE_SURGE` events.
+
